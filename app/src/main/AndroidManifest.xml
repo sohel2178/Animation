@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.FabPentagonActivity"></activity>
+        <activity android:name=".activities.FabPentagonActivity" />
+        <activity android:name=".activities.ServiceTestActivity"></activity>
+
+        <service android:name=".Service.MyService"/>
     </application>
 
 </manifest>

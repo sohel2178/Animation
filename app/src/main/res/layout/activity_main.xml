@@ -18,6 +18,14 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/fab_pentagon"/>
 
+        <Button
+            android:layout_below="@+id/fab_pentagon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_service"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/start_service"/>
+
     </RelativeLayout>
 
 </RelativeLayout>

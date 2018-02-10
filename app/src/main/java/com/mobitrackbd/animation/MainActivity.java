@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mobitrackbd.animation.activities.FabPentagonActivity;
+import com.mobitrackbd.animation.activities.ServiceTestActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private Button btnFabPentagon;
+    private Button btnFabPentagon,btnStartServiceActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         btnFabPentagon = findViewById(R.id.fab_pentagon);
+        btnStartServiceActivity = findViewById(R.id.start_service);
         btnFabPentagon.setOnClickListener(this);
+        btnStartServiceActivity.setOnClickListener(this);
     }
 
     @Override
@@ -33,11 +36,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fab_pentagon:
                 startFabPentagonActivity();
                 break;
+
+            case R.id.start_service:
+                startServiceActivity();
+                break;
         }
 
     }
 
     private void startFabPentagonActivity() {
         startActivity(new Intent(getApplicationContext(), FabPentagonActivity.class));
+    }
+
+    private void startServiceActivity() {
+        startActivity(new Intent(getApplicationContext(), ServiceTestActivity.class));
     }
 }
