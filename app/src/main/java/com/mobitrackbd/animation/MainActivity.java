@@ -8,11 +8,13 @@ import android.widget.Button;
 
 import com.mobitrackbd.animation.activities.FabPentagonActivity;
 import com.mobitrackbd.animation.activities.ServiceTestActivity;
+import com.mobitrackbd.animation.activities.TestActivity;
+import com.mobitrackbd.animation.activities.VerticalAnimationActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private Button btnFabPentagon,btnStartServiceActivity;
+    private Button btnFabPentagon,btnStartServiceActivity,btnFabVertical,btnTestActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +26,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         btnFabPentagon = findViewById(R.id.fab_pentagon);
+        btnFabVertical = findViewById(R.id.fab_vertical);
         btnStartServiceActivity = findViewById(R.id.start_service);
+        btnTestActivity = findViewById(R.id.test_activity);
         btnFabPentagon.setOnClickListener(this);
         btnStartServiceActivity.setOnClickListener(this);
+        btnFabVertical.setOnClickListener(this);
+        btnTestActivity.setOnClickListener(this);
     }
 
     @Override
@@ -37,15 +43,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startFabPentagonActivity();
                 break;
 
+            case R.id.fab_vertical:
+                startFabVerticalActivity();
+                break;
+
             case R.id.start_service:
                 startServiceActivity();
+                break;
+
+            case R.id.test_activity:
+                startTestActivity();
                 break;
         }
 
     }
 
+    private void startTestActivity() {
+        startActivity(new Intent(getApplicationContext(), TestActivity.class));
+    }
+
     private void startFabPentagonActivity() {
         startActivity(new Intent(getApplicationContext(), FabPentagonActivity.class));
+    }
+
+    private void startFabVerticalActivity() {
+        startActivity(new Intent(getApplicationContext(), VerticalAnimationActivity.class));
     }
 
     private void startServiceActivity() {

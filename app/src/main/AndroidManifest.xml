@@ -17,9 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.FabPentagonActivity" />
-        <activity android:name=".activities.ServiceTestActivity"></activity>
+        <activity android:name=".activities.ServiceTestActivity" />
 
-        <service android:name=".Service.MyService"/>
+        <service android:name=".Service.MyService" />
+
+        <activity android:name=".activities.VerticalAnimationActivity" />
+        <activity android:name=".activities.TestActivity"></activity>
     </application>
 
 </manifest>
